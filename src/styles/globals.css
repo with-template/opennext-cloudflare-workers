@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@import "./colors.css";
+@import "./fonts.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer base {
+  :root {
+    /* Declare that your site supports both light & dark schemes 
+       so browsers don’t "force adjust" system UI elements 
+       (scrollbars, form controls, etc.) */
+    color-scheme: light dark;
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+
+    /* Prevent accidental double-tap zoom on iOS Safari */
+    touch-action: manipulation;
+
+    /* Prevent browsers from auto-inverting / adjusting colors 
+       when user has system dark mode enabled */
+    forced-color-adjust: none !important;
+  }
+
+  html {
+    /* Enable advanced OpenType font features for cleaner glyph shapes */
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+
+    /* Reset variable font axis settings */
+    font-variation-settings: normal;
+
+    /* Improve font rendering smoothness on macOS and iOS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Remove iOS Safari’s gray flash when tapping links/elements */
+    -webkit-tap-highlight-color: transparent;
+
+    /* Ask browsers to optimize text shaping & kerning for legibility */
+    text-rendering: optimizeLegibility;
+
+    /* Prevent "scroll bounce" overscroll chaining (e.g., 
+       nested scroll containers triggering page scroll) */
+    overscroll-behavior: none;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

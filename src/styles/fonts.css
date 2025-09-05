@@ -1,0 +1,8 @@
+@theme {
+  --font-sans:
+    var(--font-geist-sans), "Geist", Helvetica, Arial, system-ui, -apple-system,
+    sans-serif;
+  --font-mono:
+    var(--font-geist-mono), "Geist Mono", SFMono-Regular, Consolas,
+    "Liberation Mono", Menlo, Courier, monospace;
+}

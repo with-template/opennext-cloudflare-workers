@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "biomejs.biome",
+    "esbenp.prettier-vscode",
+    "lokalise.i18n-ally",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "GitHub.vscode-pull-request-github",
+    "johnsoncodehk.vscode-tsconfig-helper",
+    "naumovs.color-highlight"
+  ]
+}
