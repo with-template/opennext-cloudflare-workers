@@ -1,5 +1,7 @@
 # opennext-cloudflare-workers
 
+[![Built with Cloudflare](https://workers.cloudflare.com/built-with-cloudflare.svg)](https://cloudflare.com)
+
 A lightweight, high-performance Next.js 15 template optimized for Cloudflare Workers.
 
 Features:
