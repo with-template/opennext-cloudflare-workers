@@ -1,0 +1,95 @@
+version: 2
+
+updates:
+  # =========================
+  # NPM – Minor & Patch Updates
+  # =========================
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "main"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "00:00"
+
+    open-pull-requests-limit: 10
+
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+    labels:
+      - "dependencies"
+      - "automated"
+
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+
+      development-dependencies:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
+
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
+
+  # =========================
+  # NPM – Major Updates (Isolated)
+  # =========================
+  - package-ecosystem: "npm"
+    directory: "/"
+    target-branch: "dependabot/npm-major"
+    schedule:
+      interval: "monthly"
+      time: "00:00"
+
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+    labels:
+      - "dependencies"
+      - "major-update"
+
+    groups:
+      production-major:
+        dependency-type: "production"
+        update-types:
+          - "major"
+
+      development-major:
+        dependency-type: "development"
+        update-types:
+          - "major"
+
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-minor"
+          - "version-update:semver-patch"
+
+  # =========================
+  # GitHub Actions
+  # =========================
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "00:00"
+
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+
+    labels:
+      - "ci"
+      - "dependencies"
+      - "automated"
