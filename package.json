@@ -15,7 +15,7 @@
     "postinstall": "node -e \"const {execSync} = require('child_process'); try {execSync('git --version', {stdio: 'ignore'}); require('child_process').execSync('pnpm dlx lefthook install', {stdio: 'inherit'});} catch {console.log('Skipping lefthook install: git not found');}\""
   },
   "dependencies": {
-    "@opennextjs/cloudflare": "^1.14.6",
+    "@opennextjs/cloudflare": "^1.16.1",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -25,10 +25,10 @@
     "@radix-ui/react-tooltip": "^1.2.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.561.0",
-    "next": "15.5.9",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "lucide-react": "^0.563.0",
+    "next": "15.5.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
